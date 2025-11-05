@@ -275,6 +275,75 @@
             color: var(--gray);
         }
 
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-card.featured {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--accent);
+        }
+
+        .pricing-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pricing-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
         /* Contact Section */
         .contact {
             background-color: var(--secondary);
@@ -430,10 +499,11 @@
             .nav-menu {
                 position: fixed;
                 top: 70px;
-                left: -100%;
+                right: -100%;
                 flex-direction: column;
                 background-color: white;
-                width: 100%;
+                width: 80%;
+                max-width: 300px;
                 text-align: center;
                 padding: 20px 0;
                 box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -442,7 +512,7 @@
             }
 
             .nav-menu.active {
-                left: 0;
+                right: 0;
             }
 
             .nav-link {
@@ -481,6 +551,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .section-title h2 {
                 font-size: 1.7rem;
             }
@@ -491,6 +565,14 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link">À propos</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#tarifs" class="nav-link">Tarifs</a></li>
+                <li><a href="#pourquoi" class="nav-link">Pourquoi nous</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
             <div class="logo">
                 <i class="fas fa-laptop-code"></i>
                 <span>Daniel_Tech</span>
@@ -498,13 +580,6 @@
             <div class="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="#apropos" class="nav-link">À propos</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#pourquoi" class="nav-link">Pourquoi nous</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
         </div>
     </header>
 
@@ -513,7 +588,7 @@
         <div class="container hero-content">
             <h1>Solutions Technologiques Sur Mesure</h1>
             <p>Nous accompagnons particuliers, professionnels et institutions dans la transformation digitale, le développement d'outils performants, et la résolution de problèmes techniques avec précision et créativité.</p>
-            <a href="#contact" class="btn">Contactez-nous</a>
+            <a href="#tarifs" class="btn">En savoir plus</a>
         </div>
     </section>
 
@@ -577,6 +652,58 @@
                     </div>
                     <h3>Formation & Accompagnement</h3>
                     <p>Sessions personnalisées en codage, trading, design UI/UX, et outils numériques pour développer vos compétences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing" id="tarifs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Tarifs 2025</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Création de Sites Web</h3>
+                    <div class="price">À partir de 100 000 FCFA</div>
+                    <ul class="pricing-features">
+                        <li>Site vitrine simple: 100 000 – 200 000 FCFA</li>
+                        <li>Portfolio / blog: 150 000 – 300 000 FCFA</li>
+                        <li>Site e-commerce: 250 000 – 600 000 FCFA</li>
+                        <li>Application web sur mesure: 400 000 – 1 000 000 FCFA</li>
+                    </ul>
+                    <p>Design responsive, animations stylisées, formulaire de contact, hébergement de base inclus.</p>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Création de Bots</h3>
+                    <div class="price">À partir de 30 000 FCFA</div>
+                    <ul class="pricing-features">
+                        <li>Bot FAQ / réponses simples: 30 000 – 100 000 FCFA</li>
+                        <li>Bot connecté à base de données / API: 150 000 – 400 000 FCFA</li>
+                        <li>Bot intelligent (IA, NLP, automatisation): 450 000 – 900 000 FCFA</li>
+                    </ul>
+                    <p>Personnalisation incluse : voix, branding, interactions stylisées.</p>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Services Techniques & Créatifs</h3>
+                    <div class="price">À partir de 5 000 FCFA</div>
+                    <ul class="pricing-features">
+                        <li>Dépannage informatique: 5 000 – 30 000 FCFA</li>
+                        <li>Design & identité visuelle: 20 000 – 100 000 FCFA</li>
+                        <li>Formation personnalisée: 15 000 – 80 000 FCFA</li>
+                        <li>Automatisation & mini-apps: 80 000 – 300 000 FCFA</li>
+                        <li>Maintenance / optimisation: 10 000 – 40 000 FCFA</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -685,7 +812,7 @@
                 <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             </div>
-            <p>&copy; 2025 Daniel_Tech. Tous droits réservés.</p>
+            <p>&copy; 2025 Daniel_Tech & JEE maintenance. Tous droits réservés.</p>
         </div>
     </footer>
 
